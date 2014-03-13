@@ -12,8 +12,7 @@ class LogstashFormatter(logging.Formatter):
     DEFAULT_KEYS = ['fields']
 
     def __init__(self, keys=DEFAULT_KEYS, *args, **kwargs):
-        log_format = ' '.join(['%({0})'] * len(keys))
-        custom_format = log_format.format(*keys)
+        custom_format = ' '.join('%({0})'.format(key) for key in keys)
 
         logging.Formatter.__init__(
             self,
