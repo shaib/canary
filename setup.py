@@ -1,11 +1,13 @@
 from setuptools import setup, find_packages
 
-version = '0.1.4'
+version = '0.1.4-hlm'
 
 #
 # determine requirements
 #
-requirements = ['pyzmq', 'webob']
+requirements = ['pyzmq'] 
+#requirements = ['pyzmq', 'webob'] # webob required for a part HLM doesn't use
+
 tests_require = []
 
 setup(
